@@ -1,4 +1,12 @@
 {% set item = data['items']['merchant-lifebalance']['products'][0] %}
+
+{% set ticket1 = data['items']['merchant-lifebalance']['ticket1'] %}
+{% set ticket2 = data['items']['merchant-lifebalance']['ticket2'] %}
+
+{% set ticket3 = data['items']['merchant-lifebalance']['ticket3'] %}
+
+{% set ticket4 = data['items']['merchant-lifebalance']['ticket4'] %}
+
 <!DOCTYPE html>
 <html>
 
@@ -235,6 +243,7 @@
 			</div>
 		</section>
 
+
 		<div class="layout-center-wrapper" id="buy_ticket">
 			<h2 class="buy-course__title">Купить курс</h2>
 
@@ -262,29 +271,29 @@
 						</ul>
 					</div>
 
-					<input type="hidden" name="item_number" id="{{item['code']}}"
-					class="items_quantity"
-					value=1 min=1 disabled data-price="{{item['price']}}"
-					data-old_price="{{item['old_price']}}" data-name="{{item['name']}}"
-					data-image="{{item['image']}}">
+					<input type="hidden" name="item_number" id="{{ticket4['code']}}"
+					class="items_quantity4"
+					value=1 min=1 disabled data-price="{{ticket4['price']}}"
+					data-old_price="{{ticket4['old_price']}}" data-name="{{ticket4['name']}}"
+					data-image="{{ticket4['image']}}">
 					
 					<div class="buy-payment">
-						<div class="buy-course__form-wrap buy-course__form-wrap--rur" id="paymentFormRUR">
+						<div class="buy-course__form-wrap buy-course__form-wrap--rur" id="payment4FormRUR">
 							<form class="form" action="#">
-								<p class="form__link" id="paymentMethodLink">Вернуться к выбору способа оплаты</p>
+								<p class="form__link" id="payment4MethodLink">Вернуться к выбору способа оплаты</p>
 								<div class="form__inner">
 									<input name="name" value="{{lead_name}}" type="text"
 										placeholder="Ваши имя и фамилия" required class="form__field"
-										id="userNameFormRUR">
+										id="userName4FormRUR">
 									<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Ваш телефон"
-										class="form__field" required id="userPhoneFormRUR">
+										class="form__field" required id="userPhone4FormRUR">
 									<input name="email" value="{{lead_email}}" type="email" placeholder="Ваш email"
-										required class="form__field" id="userEmailFormRUR">
+										required class="form__field" id="userEmail4FormRUR">
 									<input name="number" type="number" placeholder="Количество билетов" value="1"
-										min="1" required class="form__field" id="ticketsNumFormRUR">
+										min="1" required class="form__field" id="ticketsNum4FormRUR">
 
 									<input class="form__btn button noselect" type="button" value="Оплатить"
-										onclick="addOrder('FormRUR')">
+										onclick="addOrder4('FormRUR')">
 								</div>
 
 								<label class="form__footer">
@@ -298,25 +307,25 @@
 							</form>
 
 						</div>
-						<div class="buy-course__form-wrap buy-course__form-wrap--ntz" id="paymentFormNTZ">
+						<div class="buy-course__form-wrap buy-course__form-wrap--ntz" id="payment4FormNTZ">
 							<form class="form" action="#">
-								<p class="form__link" id="paymentMethodLink2">Вернуться к выбору способа оплаты</p>
+								<p class="form__link" id="payment4MethodLink2">Вернуться к выбору способа оплаты</p>
 								<div class="form__inner">
 									<input name="login" value="{{lead_login}}" type="text"
 										placeholder="Ваш логин в ntz.team" required class="form__field"
-										id="userLoginFormNTZ">
+										id="userLogin4FormNTZ">
 									<input name="name" value="{{lead_name}}" type="text"
 										placeholder="Ваши имя и фамилия" required class="form__field"
-										id="userNameFormNTZ">
+										id="userName4FormNTZ">
 									<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Ваш телефон"
-										class="form__field" required id="userPhoneFormNTZ">
+										class="form__field" required id="userPhone4FormNTZ">
 									<input name="email" value="{{lead_email}}" type="email" placeholder="Ваш email"
-										required class="form__field" id="userEmailFormNTZ">
+										required class="form__field" id="userEmail4FormNTZ">
 									<input name="number" type="number" placeholder="Количество билетов" value="1"
-										min="1" required class="form__field" id="ticketsNumFormNTZ">
+										min="1" required class="form__field" id="ticketsNum4FormNTZ">
 
 									<input class="form__btn button noselect" type="button" value="Оплатить"
-										onclick="addOrder('FormNTZ')">
+										onclick="addOrder4('FormNTZ')">
 								</div>
 
 								<label class="form__footer">
@@ -330,18 +339,18 @@
 							</form>
 
 						</div>
-						<div class="buy-payment__wrap" id="paymentMethod">
+						<div class="buy-payment__wrap" id="payment4Method">
 							<div class="buy-payment__inner">
 								<p class="buy-payment__text">Выберите удобный способ оплаты</p>
 								<div class="buy-payment__btn-wrap">
 									<div class="buy-payment__block">
 										<img class="buy-payment__img" src="img/visa_mastercassrd.png"
 											alt="visa mastercard">
-										<span class="buy-payment__btn" id="buyBtnRUR">Оплатить в рублях</span>
+										<span class="buy-payment__btn" id="buyBtnRUR4">Оплатить в рублях</span>
 									</div>
 									<div class="buy-payment__block">
 										<img class="buy-payment__img" src="img/ntz.png" alt="Netizens">
-										<span class="buy-payment__btn" id="buyBtnNTZ">Оплатить в NTZ</span>
+										<span class="buy-payment__btn" id="buyBtnNTZ4">Оплатить в NTZ</span>
 									</div>
 								</div>
 							</div>
@@ -363,11 +372,9 @@
 						<p class="buy-course__name">Тариф "Индивидуальный"</p>
 					</div>
 
-					<input type="hidden" name="item_number" id="{{item['code']}}"
-					class="items_quantity"
-					value=1 min=1 disabled data-price="{{item['price']}}"
-					data-old_price="{{item['old_price']}}" data-name="{{item['name']}}"
-					data-image="{{item['image']}}">
+					<input type="hidden" name="item_number" id="{{ticket1['code']}}" class="items_quantity" value=1 min=1 disabled
+					data-price="{{ticket1['price']}}" data-old_price="{{ticket1['old_price']}}" data-name="{{ticket1['name']}}"
+					data-image="{{ticket1['image']}}">
 					
 					<div class="buy-payment">
 						<div class="buy-course__form-wrap buy-course__form-wrap--rur" id="paymentFormRUR">
@@ -469,29 +476,27 @@
 						</ul>
 					</div>
 
-					<input type="hidden" name="item_number" id="{{item['code']}}"
-					class="items_quantity"
-					value=1 min=1 disabled data-price="{{item['price']}}"
-					data-old_price="{{item['old_price']}}" data-name="{{item['name']}}"
-					data-image="{{item['image']}}">
+					<input type="hidden" name="item_number" id="{{ticket2['code']}}" class="items_quantity2" value=1 min=1 disabled
+					data-price="{{ticket2['price']}}" data-old_price="{{ticket2['old_price']}}" data-name="{{ticket2['name']}}"
+					data-image="{{ticket2['image']}}">
 					
 					<div class="buy-payment">
-						<div class="buy-course__form-wrap buy-course__form-wrap--rur" id="paymentFormRUR">
+						<div class="buy-course__form-wrap buy-course__form-wrap--rur" id="payment2FormRUR">
 							<form class="form" action="#">
-								<p class="form__link" id="paymentMethodLink">Вернуться к выбору способа оплаты</p>
+								<p class="form__link" id="payment2MethodLink">Вернуться к выбору способа оплаты</p>
 								<div class="form__inner">
 									<input name="name" value="{{lead_name}}" type="text"
 										placeholder="Ваши имя и фамилия" required class="form__field"
-										id="userNameFormRUR">
+										id="userName2FormRUR">
 									<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Ваш телефон"
-										class="form__field" required id="userPhoneFormRUR">
+										class="form__field" required id="userPhone2FormRUR">
 									<input name="email" value="{{lead_email}}" type="email" placeholder="Ваш email"
-										required class="form__field" id="userEmailFormRUR">
+										required class="form__field" id="userEmail2FormRUR">
 									<input name="number" type="number" placeholder="Количество билетов" value="1"
-										min="1" required class="form__field" id="ticketsNumFormRUR">
+										min="1" required class="form__field" id="ticketsNum2FormRUR">
 
 									<input class="form__btn button noselect" type="button" value="Оплатить"
-										onclick="addOrder('FormRUR')">
+										onclick="addOrder2('FormRUR')">
 								</div>
 
 								<label class="form__footer">
@@ -505,25 +510,25 @@
 							</form>
 
 						</div>
-						<div class="buy-course__form-wrap buy-course__form-wrap--ntz" id="paymentFormNTZ">
+						<div class="buy-course__form-wrap buy-course__form-wrap--ntz" id="payment2FormNTZ">
 							<form class="form" action="#">
-								<p class="form__link" id="paymentMethodLink2">Вернуться к выбору способа оплаты</p>
+								<p class="form__link" id="payment2MethodLink2">Вернуться к выбору способа оплаты</p>
 								<div class="form__inner">
 									<input name="login" value="{{lead_login}}" type="text"
 										placeholder="Ваш логин в ntz.team" required class="form__field"
-										id="userLoginFormNTZ">
+										id="userLogin2FormNTZ">
 									<input name="name" value="{{lead_name}}" type="text"
 										placeholder="Ваши имя и фамилия" required class="form__field"
-										id="userNameFormNTZ">
+										id="userName2FormNTZ">
 									<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Ваш телефон"
-										class="form__field" required id="userPhoneFormNTZ">
+										class="form__field" required id="userPhone2FormNTZ">
 									<input name="email" value="{{lead_email}}" type="email" placeholder="Ваш email"
-										required class="form__field" id="userEmailFormNTZ">
+										required class="form__field" id="userEmail2FormNTZ">
 									<input name="number" type="number" placeholder="Количество билетов" value="1"
-										min="1" required class="form__field" id="ticketsNumFormNTZ">
+										min="1" required class="form__field" id="ticketsNum2FormNTZ">
 
 									<input class="form__btn button noselect" type="button" value="Оплатить"
-										onclick="addOrder('FormNTZ')">
+										onclick="addOrder2('FormNTZ')">
 								</div>
 
 								<label class="form__footer">
@@ -537,18 +542,18 @@
 							</form>
 
 						</div>
-						<div class="buy-payment__wrap" id="paymentMethod">
+						<div class="buy-payment__wrap" id="payment2Method">
 							<div class="buy-payment__inner">
 								<p class="buy-payment__text">Выберите удобный способ оплаты</p>
 								<div class="buy-payment__btn-wrap">
 									<div class="buy-payment__block">
 										<img class="buy-payment__img" src="img/visa_mastercassrd.png"
 											alt="visa mastercard">
-										<span class="buy-payment__btn" id="buyBtnRUR">Оплатить в рублях</span>
+										<span class="buy-payment__btn" id="buyBtnRUR2">Оплатить в рублях</span>
 									</div>
 									<div class="buy-payment__block">
 										<img class="buy-payment__img" src="img/ntz.png" alt="Netizens">
-										<span class="buy-payment__btn" id="buyBtnNTZ">Оплатить в NTZ</span>
+										<span class="buy-payment__btn" id="buyBtnNTZ2">Оплатить в NTZ</span>
 									</div>
 								</div>
 							</div>
@@ -576,29 +581,27 @@
 						</ul>
 					</div>
 
-					<input type="hidden" name="item_number" id="{{item['code']}}"
-					class="items_quantity"
-					value=1 min=1 disabled data-price="{{item['price']}}"
-					data-old_price="{{item['old_price']}}" data-name="{{item['name']}}"
-					data-image="{{item['image']}}">
+					<input type="hidden" name="item_number" id="{{ticket3['code']}}" class="items_quantity3" value=1 min=1 disabled
+					data-price="{{ticket3['price']}}" data-old_price="{{ticket3['old_price']}}" data-name="{{ticket3['name']}}"
+					data-image="{{ticket3['image']}}">
 					
 					<div class="buy-payment">
-						<div class="buy-course__form-wrap buy-course__form-wrap--rur" id="paymentFormRUR">
+						<div class="buy-course__form-wrap buy-course__form-wrap--rur" id="payment3FormRUR">
 							<form class="form" action="#">
-								<p class="form__link" id="paymentMethodLink">Вернуться к выбору способа оплаты</p>
+								<p class="form__link" id="payment3MethodLink">Вернуться к выбору способа оплаты</p>
 								<div class="form__inner">
 									<input name="name" value="{{lead_name}}" type="text"
 										placeholder="Ваши имя и фамилия" required class="form__field"
-										id="userNameFormRUR">
+										id="userName3FormRUR">
 									<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Ваш телефон"
-										class="form__field" required id="userPhoneFormRUR">
+										class="form__field" required id="userPhone3FormRUR">
 									<input name="email" value="{{lead_email}}" type="email" placeholder="Ваш email"
-										required class="form__field" id="userEmailFormRUR">
+										required class="form__field" id="userEmail3FormRUR">
 									<input name="number" type="number" placeholder="Количество билетов" value="1"
-										min="1" required class="form__field" id="ticketsNumFormRUR">
+										min="1" required class="form__field" id="ticketsNum3FormRUR">
 
 									<input class="form__btn button noselect" type="button" value="Оплатить"
-										onclick="addOrder('FormRUR')">
+										onclick="addOrder3('FormRUR')">
 								</div>
 
 								<label class="form__footer">
@@ -612,25 +615,25 @@
 							</form>
 
 						</div>
-						<div class="buy-course__form-wrap buy-course__form-wrap--ntz" id="paymentFormNTZ">
+						<div class="buy-course__form-wrap buy-course__form-wrap--ntz" id="payment3FormNTZ">
 							<form class="form" action="#">
-								<p class="form__link" id="paymentMethodLink2">Вернуться к выбору способа оплаты</p>
+								<p class="form__link" id="payment3MethodLink2">Вернуться к выбору способа оплаты</p>
 								<div class="form__inner">
 									<input name="login" value="{{lead_login}}" type="text"
 										placeholder="Ваш логин в ntz.team" required class="form__field"
-										id="userLoginFormNTZ">
+										id="userLogin3FormNTZ">
 									<input name="name" value="{{lead_name}}" type="text"
 										placeholder="Ваши имя и фамилия" required class="form__field"
-										id="userNameFormNTZ">
+										id="userName3FormNTZ">
 									<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Ваш телефон"
-										class="form__field" required id="userPhoneFormNTZ">
+										class="form__field" required id="userPhone3FormNTZ">
 									<input name="email" value="{{lead_email}}" type="email" placeholder="Ваш email"
-										required class="form__field" id="userEmailFormNTZ">
+										required class="form__field" id="userEmail3FormNTZ">
 									<input name="number" type="number" placeholder="Количество билетов" value="1"
-										min="1" required class="form__field" id="ticketsNumFormNTZ">
+										min="1" required class="form__field" id="ticketsNum3FormNTZ">
 
 									<input class="form__btn button noselect" type="button" value="Оплатить"
-										onclick="addOrder('FormNTZ')">
+										onclick="addOrder3('FormNTZ')">
 								</div>
 
 								<label class="form__footer">
@@ -644,18 +647,18 @@
 							</form>
 
 						</div>
-						<div class="buy-payment__wrap" id="paymentMethod">
+						<div class="buy-payment__wrap" id="payment3Method">
 							<div class="buy-payment__inner">
 								<p class="buy-payment__text">Выберите удобный способ оплаты</p>
 								<div class="buy-payment__btn-wrap">
 									<div class="buy-payment__block">
 										<img class="buy-payment__img" src="img/visa_mastercassrd.png"
 											alt="visa mastercard">
-										<span class="buy-payment__btn" id="buyBtnRUR">Оплатить в рублях</span>
+										<span class="buy-payment__btn" id="buyBtnRUR3">Оплатить в рублях</span>
 									</div>
 									<div class="buy-payment__block">
 										<img class="buy-payment__img" src="img/ntz.png" alt="Netizens">
-										<span class="buy-payment__btn" id="buyBtnNTZ">Оплатить в NTZ</span>
+										<span class="buy-payment__btn" id="buyBtnNTZ3">Оплатить в NTZ</span>
 									</div>
 								</div>
 							</div>
